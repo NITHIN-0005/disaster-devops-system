@@ -1,0 +1,20 @@
+﻿services:
+  backend:
+    build: ./backend
+    container_name: disaster-backend
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+  frontend:
+    image: python:3.9-alpine
+    container_name: disaster-frontend
+    working_dir: /app
+    command: sh -c "python -m http.server 80"
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+    restart: unless-stopped
