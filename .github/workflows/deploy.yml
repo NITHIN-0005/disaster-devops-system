@@ -17,4 +17,4 @@ jobs:
       run: docker build -t disaster-app .
 
     - name: Run Container
-      run: docker run -d -p 3000:3000 disaster-app
+      run: docker run -d -p disaster-app
