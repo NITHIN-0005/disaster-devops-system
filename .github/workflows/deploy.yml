@@ -17,4 +17,4 @@ jobs:
       run: docker build -t disaster-app ./backend
 
     - name: Run Container
-      run: docker run disaster-app
+      run: docker run disaster-app && sleep 5
