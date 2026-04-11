@@ -1,0 +1,11 @@
+- name: Setup Docker Container using Ansible
+  hosts: localhost
+  tasks:
+
+    - name: Pull Docker Image
+      docker_container:
+        name: disaster-backend
+        image: disaster-app
+        state: started
+        ports:
+          - "3000:3000"

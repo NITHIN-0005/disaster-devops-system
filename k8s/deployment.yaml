@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: disaster-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: disaster
+  template:
+    metadata:
+      labels:
+        app: disaster
+    spec:
+      containers:
+      - name: backend
+        image: disaster-app
+        ports:
+        - containerPort: 3000
